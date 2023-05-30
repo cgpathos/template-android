@@ -37,7 +37,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.6"
+        kotlinCompilerExtensionVersion = libs.versions.composeKotlinCompiler.get()
     }
     packagingOptions {
         resources {
@@ -55,16 +55,13 @@ dependencies {
     implementation(libs.androidx.activity.compose)
 
     implementation(platform(libs.compose.bom))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
+    implementation(libs.bundles.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
     androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation(libs.bundles.compose.android.test)
+    debugImplementation(libs.bundles.compose.test)
 }
