@@ -1,4 +1,3 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
@@ -20,7 +19,6 @@ android {
             useSupportLibrary = true
         }
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -48,21 +46,24 @@ android {
 }
 
 dependencies {
+    // kotlin
+    implementation(libs.bundles.kotlin)
+    testImplementation(libs.bundles.kotlin.test)
+
     implementation(libs.core.ktx)
 
-    implementation(platform(libs.kotlin.bom))
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
 
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.activity.compose)
-
-    implementation(platform(libs.compose.bom))
+    // compose
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
-
-    androidTestImplementation(platform(libs.compose.bom))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.bundles.compose.android.test)
     debugImplementation(libs.bundles.compose.ui.test)
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
 }

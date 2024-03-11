@@ -1,5 +1,6 @@
 package today.pathos.template.android
 
+import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,5 +14,14 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun check_testRun() = runTest {
+        assertEquals(true, suspendRun())
+    }
+
+    private suspend fun suspendRun(): Boolean {
+        return true
     }
 }
