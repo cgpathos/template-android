@@ -7,10 +7,10 @@
 
 ## 구성 정보
 
-#  Android Studio Iguana | 2023.2.1
-#  gradle version catelog
-#  compose
-#  material3
+*  Android Studio Iguana | 2023.2.1
+*  gradle version catalog
+*  Jetpack compose
+*  material3
 
 | name                  | version    |
 |-----------------------|------------|
