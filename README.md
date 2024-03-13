@@ -1,4 +1,4 @@
-# `2024.03.01`
+# `2024.03.02`
 
 ## template-android
 
@@ -26,5 +26,6 @@
 > https://github.com/android/architecture-templates/blob/base/customizer.sh 가져와서 적절하게 수정한 스크립트
 
 ```
- ./sh/customizer.sh your.package.name  
+ # {ApplicationName}은 공백없이 입력해야 함.
+ ./sh/customizer.sh {your.package.name} [{ApplicationName}]
 ```

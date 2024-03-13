@@ -4,7 +4,7 @@
 set -e
 
 if [[ $# -lt 1 ]]; then
-   echo "Usage: bash customizer.sh {my.new.package} [{ApplicationName}]" >&2
+   echo "Usage: bash customizer.sh {my.new.package} [{ApplicationName}]\n* {ApplicationName} must be entered without spaces." >&2
    exit 2
 fi
 
