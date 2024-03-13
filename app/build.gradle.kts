@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "today.pathos.template.android"
+    namespace = "android.template"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "today.pathos.template.android"
+        applicationId = "android.template"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

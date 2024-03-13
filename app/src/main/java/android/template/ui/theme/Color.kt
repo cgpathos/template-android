@@ -1,4 +1,4 @@
-package today.pathos.template.android.ui.theme
+package android.template.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

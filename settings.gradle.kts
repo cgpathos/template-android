@@ -18,5 +18,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Template Android"
+rootProject.name = "TemplateAndroid"
 include(":app")

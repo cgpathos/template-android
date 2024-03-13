@@ -1,4 +1,4 @@
-package today.pathos.template.android
+package android.template
 
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
