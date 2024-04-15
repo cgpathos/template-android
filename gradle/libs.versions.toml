@@ -1,13 +1,13 @@
 [versions]
-agp = "8.3.0"
-kotlin = "1.9.22"
+agp = "8.3.2"
+kotlin = "1.9.23"
 
 coreKtx = "1.12.0"
 
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
-composeBom = "2024.02.02"
-composeKotlinCompiler = "1.5.10"
+composeBom = "2024.04.00"
+composeKotlinCompiler = "1.5.11"
 
 junit = "4.13.2"
 junitExt = "1.1.5"

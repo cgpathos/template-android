@@ -1,4 +1,4 @@
-# `2024.03.02`
+# `2024.04.00`
 
 ## template-android
 
@@ -7,22 +7,23 @@
 
 ## 구성 정보
 
-*  Android Studio Iguana | 2023.2.1
-*  gradle version catalog
-*  Jetpack compose
-*  material3
+* Android Studio Iguana | 2023.2.1 Patch 2
+* gradle version catalog
+* Jetpack compose
+* material3
 
 | name                  | version    |
 |-----------------------|------------|
 | gradle                | 8.4        |
-| AGP                   | 8.3.0      |
-| kotlin                | 1.9.22     |
-| composeBom            | 2024.02.02 |
-| composeKotlinCompiler | 1.5.10     |
+| AGP                   | 8.3.2      |
+| kotlin                | 1.9.23     |
+| composeBom            | 2024.04.00 |
+| composeKotlinCompiler | 1.5.11     |
 
 나머지 버전정보는 여기 -> https://github.com/cgpathos/template-android/blob/main/gradle/libs.versions.toml
 
 ## 패키지 이름 변경하기
+
 > https://github.com/android/architecture-templates/blob/base/customizer.sh 가져와서 적절하게 수정한 스크립트
 
 ```
