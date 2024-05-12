@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
@@ -49,6 +49,7 @@ dependencies {
     // kotlin
     implementation(libs.bundles.kotlin)
     testImplementation(libs.bundles.kotlin.test)
+    androidTestImplementation(libs.bundles.kotlin.test)
 
     implementation(libs.core.ktx)
 
