@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.compose.compiler)
 }
 
 android {
@@ -36,7 +37,6 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeKotlinCompiler.get()
     }
     packaging {
         resources {
@@ -57,9 +57,10 @@ dependencies {
     implementation(libs.androidx.activity.compose)
 
     // compose
-    implementation(platform(libs.androidx.compose.bom))
+    val composeBom = platform(libs.androidx.compose.bom)
+    implementation(composeBom)
     implementation(libs.bundles.compose)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(composeBom)
     androidTestImplementation(libs.bundles.compose.android.test)
     debugImplementation(libs.bundles.compose.ui.test)
 
