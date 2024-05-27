@@ -1,4 +1,4 @@
-# `2024.05.00`
+# `2024.05.01`
 
 ## template-android
 
@@ -7,18 +7,17 @@
 
 ## 구성 정보
 
-* Android Studio Jellyfish | 2023.3.1
+* Android Studio Jellyfish | 2023.3.1 Patch 1
 * gradle version catalog
 * Jetpack compose
 * material3
 
-| name                  | version    |
-|-----------------------|------------|
-| gradle                | 8.6        |
-| AGP                   | 8.4.0      |
-| kotlin                | 1.9.23     |
-| composeBom            | 2024.05.00 |
-| composeKotlinCompiler | 1.5.13     |
+| name       | version    |
+|------------|------------|
+| gradle     | 8.6        |
+| AGP        | 8.4.1      |
+| kotlin     | 2.0.0      |
+| composeBom | 2024.05.00 |
 
 나머지 버전정보는 여기 -> https://github.com/cgpathos/template-android/blob/main/gradle/libs.versions.toml
 
