@@ -23,6 +23,6 @@ jobs:
         if: github.event.pull_request.merged == true
         id: open-pr
         run: |
-          gh release create "${{ github.event.pull_request.head.ref }}" --generate-notes
+          gh release create "${{ github.event.pull_request.head.ref }}" --generate-notes --verify-tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
