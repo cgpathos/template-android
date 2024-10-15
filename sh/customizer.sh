@@ -42,6 +42,11 @@ then
     echo "# $APPNAME" > README.md
 fi
 
+# Remove github actions files
+echo "Removing github actions workflows"
+rm -rf ./github/workflows/*
+echo "Done!"
+
 # Remove additional files
 echo "Removing additional files"
 rm -rf ./sh/customizer.sh
