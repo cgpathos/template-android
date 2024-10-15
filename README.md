@@ -1,4 +1,4 @@
-# `2024.10.02`
+# `2024.10.03`
 
 ## template-android
 
@@ -7,7 +7,7 @@
 
 ## 구성 정보
 
-* Android Studio Ladybug | 2024.2.1
+* Android Studio Ladybug | 2024.2.1 Patch 1
 * gradle version catalog
 * Jetpack compose
 * material3
@@ -15,8 +15,8 @@
 | name       | version    |
 |------------|------------|
 | gradle     | 8.9        |
-| AGP        | 8.7.0      |
-| kotlin     | 2.0.0      |
+| AGP        | 8.7.1      |
+| kotlin     | 2.0.21     |
 | composeBom | 2024.09.03 |
 
 나머지 버전정보는 여기 -> https://github.com/cgpathos/template-android/blob/main/gradle/libs.versions.toml
