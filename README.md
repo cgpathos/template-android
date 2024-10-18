@@ -1,4 +1,4 @@
-# `2024.10.03`
+# `2024.10.04`
 
 ## template-android
 
@@ -17,7 +17,7 @@
 | gradle     | 8.9        |
 | AGP        | 8.7.1      |
 | kotlin     | 2.0.21     |
-| composeBom | 2024.09.03 |
+| composeBom | 2024.10.00 |
 
 나머지 버전정보는 여기 -> https://github.com/cgpathos/template-android/blob/main/gradle/libs.versions.toml
 
