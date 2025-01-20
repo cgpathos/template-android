@@ -20,6 +20,23 @@ jobs:
         if: github.event.pull_request.merged == true
         uses: actions/checkout@v4
 
+      - name: update README.md
+        if: github.event.pull_request.merged == true
+        run: |
+          VERSION_NAME="${{ github.event.pull_request.head.ref }}"
+          FILE_PATH="README.md"
+          
+          echo "\`$VERSION_NAME\`" > temp.txt
+          tail -n +2 "$FILE_PATH" >> temp.txt
+          mv temp.txt "$FILE_PATH"
+
+      - name: Commit changes
+        if: github.event.pull_request.merged == true
+        run: |
+          git add "$FILE_PATH"
+          git commit -m "(bot)Update the title of README.md with the version name."
+          git push
+
       - name: Create tag by branch name
         if: github.event.pull_request.merged == true
         run: |
