@@ -7,19 +7,13 @@
 
 ## 구성 정보
 
-* Android Studio Ladybug | 2024.2.1 Patch 1
-* gradle version catalog
-* Jetpack compose
-* material3
+*  Android Studio Ladybug Feature Drop | 2024.2.2
+*  gradle version catalog
+*  Jetpack Compose
+*  Material3
+*  Custom lint(TODO)
 
-| name       | version    |
-|------------|------------|
-| gradle     | 8.9        |
-| AGP        | 8.7.1      |
-| kotlin     | 2.0.21     |
-| composeBom | 2024.10.00 |
-
-나머지 버전정보는 여기 -> https://github.com/cgpathos/template-android/blob/main/gradle/libs.versions.toml
+버전정보는 여기 -> https://github.com/cgpathos/template-android/blob/main/gradle/libs.versions.toml
 
 ## 패키지 이름 변경하기
 
