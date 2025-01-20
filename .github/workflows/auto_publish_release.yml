@@ -34,6 +34,8 @@ jobs:
       - name: Commit changes
         if: github.event.pull_request.merged == true
         run: |
+          git config --local user.email "${{ github.event.pusher.email }}"
+          git config --local user.name "${{ github.event.pusher.name }}"
           git add "$FILE_PATH"
           git commit -m "(bot)Update the title of README.md with the version name."
           git push
