@@ -9,6 +9,8 @@ on:
 jobs:
   auto_publish:
     runs-on: ubuntu-latest
+    env:
+      FILE_PATH: README.md
     steps:
       - name: Filter from dependabot
         if: startsWith(github.head_ref, 'dependabot/')
@@ -24,7 +26,6 @@ jobs:
         if: github.event.pull_request.merged == true
         run: |
           VERSION_NAME="${{ github.event.pull_request.head.ref }}"
-          FILE_PATH="README.md"
           
           echo "\`$VERSION_NAME\`" > temp.txt
           tail -n +2 "$FILE_PATH" >> temp.txt
