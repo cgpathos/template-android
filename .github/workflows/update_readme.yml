@@ -24,7 +24,7 @@ jobs:
         run: |
           CURRENT_VERSION_NAME=$(head -n 1 $FILE_PATH)
           echo $CURRENT_VERSION_NAME
-          if [ "\`${{ steps.version_name.outputs.value }}\`" = "$CURRENT_VERSION_NAME" ];
+          if [[ "\`${{ steps.version_name.outputs.value }}\`" = "$CURRENT_VERSION_NAME" ]]; then
             echo "Version name is already updated.This workflow is will be skipped."
             exit 1
           fi
