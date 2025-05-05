@@ -37,8 +37,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           LOGIN=${{ github.event.pull_request.user.login }}
-          EMAIL=$(gh api users/$LOGIN | jp -r '.email')
-          USER=$(gh api users/$LOGIN | jp -r '.name')
+          EMAIL=$(gh api users/$LOGIN | jq -r '.email')
+          USER=$(gh api users/$LOGIN | jq -r '.name')
           git config --local user.email "$EMAIL"
           git config --local user.name "$USER"
           git add "$FILE_PATH"
