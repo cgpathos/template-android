@@ -13,7 +13,7 @@ jobs:
       - name: Filter from dependabot
         if: startsWith(github.head_ref, 'dependabot/')
         run: |
-          echo "::notice This pull request is from dependabot. This workflow is will be skipped."
+          echo "::notice::This pull request is from dependabot. This workflow is will be skipped."
           exit 1
 
       - name: Checkout code
