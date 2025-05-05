@@ -45,7 +45,7 @@ junit = "4.13.2"
 junitExt = "1.2.1"
 testCoreKtx = "1.6.1"
 espressoCore = "3.6.1"
-mockk = "1.13.16"
+mockk = "1.14.2"
 robolectric = "4.14.1"
 
 [libraries]
