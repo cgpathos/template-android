@@ -9,41 +9,16 @@ on:
 jobs:
   auto_publish:
     runs-on: ubuntu-latest
-    env:
-      FILE_PATH: README.md
     steps:
       - name: Filter from dependabot
         if: startsWith(github.head_ref, 'dependabot/')
         run: |
-          echo "::notice This pull request is from dependabot. This workflow is will be skipped."
+          echo "::notice::This pull request is from dependabot. This workflow is will be skipped."
           exit 1
 
       - name: Checkout code
         if: github.event.pull_request.merged == true
         uses: actions/checkout@v4
-
-      - name: update README.md
-        if: github.event.pull_request.merged == true
-        run: |
-          VERSION_NAME="${{ github.event.pull_request.head.ref }}"
-          
-          echo "\`$VERSION_NAME\`" > temp.txt
-          tail -n +2 "$FILE_PATH" >> temp.txt
-          mv temp.txt "$FILE_PATH"
-
-      - name: Commit changes
-        if: github.event.pull_request.merged == true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          LOGIN=${{ github.event.pull_request.user.login }}
-          EMAIL=$(gh api users/$LOGIN | jq -r '.email')
-          USER=$(gh api users/$LOGIN | jq -r '.name')
-          git config --local user.email "$EMAIL"
-          git config --local user.name "$USER"
-          git add "$FILE_PATH"
-          git commit -m "(bot)Update the title of README.md with the version name."
-          git push
 
       - name: Create tag by branch name
         if: github.event.pull_request.merged == true
