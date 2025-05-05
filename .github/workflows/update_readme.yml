@@ -21,20 +21,25 @@ jobs:
           echo "value=$VERSION_NAME" >> $GITHUB_OUTPUT
 
       - name: Check already updated.
+        id: check
         run: |
           CURRENT_VERSION_NAME=$(head -n 1 $FILE_PATH)
           if [[ "\`${{ steps.version_name.outputs.value }}\`" = "$CURRENT_VERSION_NAME" ]]; then
             echo "::notice::Version name is already updated.This workflow is will be skipped."
-            exit 0
+            echo "can_proceed=false" >> $GITHUB_OUTPUT
+          else
+            echo "can_proceed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Update README.md
+        if: steps.check.outputs.can_proceed == 'true'
         run: |
           echo "\`${{ steps.version_name.outputs.value }}\`" > temp.txt
           tail -n +2 "$FILE_PATH" >> temp.txt
           mv temp.txt "$FILE_PATH"
 
       - name: Commit changes
+        if: steps.check.outputs.can_proceed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
