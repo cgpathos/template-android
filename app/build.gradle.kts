@@ -1,20 +1,26 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.serialization)
-    alias(libs.plugins.jetbrains.compose.compiler)
+    alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.androidx.room)
     alias(libs.plugins.secrets)
+    alias(libs.plugins.ktorfit)
+    alias(libs.plugins.stability.analyzer)
+    alias(libs.plugins.gms.oss.licenses.plugin)
 }
 
 android {
     namespace = "android.template"
-    compileSdk = 35
+    compileSdk {
+        version = release(36)
+    }
 
     defaultConfig {
         applicationId = "android.template"
-        minSdk = 26
-        targetSdk = 35
+        minSdk = 28
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -36,21 +42,26 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlin {
-        jvmToolchain(17)
-
-        // fixme : 언젠가 beta 풀리면 설정 활성화 하기
-//        sourceSets.all {
-//            languageSettings.enableLanguageFeature("ExplicitBackingFields")
-//        }
-    }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1,LICENSE*.md}"
         }
+    }
+    testOptions.unitTests.isIncludeAndroidResources = true
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add("-Xwhen-guards")
+        freeCompilerArgs.add("-Xcontext-parameters")
+        freeCompilerArgs.add("-Xexplicit-backing-fields")
     }
 }
 
@@ -71,7 +82,33 @@ dependencies {
     testImplementation(libs.bundles.kotlin.test)
     androidTestImplementation(libs.bundles.kotlin.test)
 
-    implementation(libs.core.ktx)
+    // hilt
+    implementation(libs.dagger.hilt.android)
+    ksp(libs.dagger.hilt.compiler)
+    testImplementation(libs.dagger.hilt.android.testing)
+    androidTestImplementation(libs.dagger.hilt.android.testing)
+    kspTest(libs.dagger.hilt.android.compiler)
+    kspAndroidTest(libs.dagger.hilt.android.compiler)
+
+    // api
+    implementation(libs.bundles.ktor)
+    implementation(libs.bundles.ktorfit)
+    testImplementation(libs.ktor.client.mock)
+
+    // security
+    implementation(libs.androidx.security.crypto)
+
+    // database
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    testImplementation(libs.androidx.room.testing)
+
+    implementation(libs.androidx.datastore)
+
+    implementation(libs.androidx.core.ktx)
+
+    implementation(libs.androidx.core.splashscreen)
 
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.activity.compose)
