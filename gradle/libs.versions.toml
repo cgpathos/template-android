@@ -1,7 +1,7 @@
 [versions]
-agp = "8.9.2"
+agp = "9.0.0"
 
-kotlin = "2.1.20"
+kotlin = "2.2.10"
 kotlinxDatetime = "0.6.1"
 kotlinxSerializationJson = "1.8.0"
 kotlinxCollectionsImmutable = "0.3.8"
@@ -9,7 +9,7 @@ turbine = "1.2.0"
 
 lint = "31.9.2"
 
-ksp = "2.1.20-1.0.32"
+ksp = "2.3.2"
 
 hilt = "2.54"
 hiltNavigation = "1.2.0"
