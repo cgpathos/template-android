@@ -1,52 +1,57 @@
 [versions]
 agp = "9.0.0"
 
-kotlin = "2.2.10"
-kotlinxDatetime = "0.6.1"
-kotlinxSerializationJson = "1.8.0"
-kotlinxCollectionsImmutable = "0.3.8"
-turbine = "1.2.0"
+kotlin = "2.3.10"
+kotlinxDatetime = "0.7.1"
+kotlinxSerializationJson = "1.10.0"
+kotlinxCollectionsImmutable = "0.4.0"
+turbine = "1.2.1"
 
-lint = "31.9.2"
+lint = "32.0.0"
 
-ksp = "2.3.2"
+ksp = "2.3.4"
 
-hilt = "2.54"
-hiltNavigation = "1.2.0"
+hilt = "2.59.1"
+hiltNavigation = "1.3.0"
 
 secrets = "2.0.1"
 
-coreKtx = "1.16.0"
+coreKtx = "1.17.0"
 
-splashscreen = "1.0.1"
+splashscreen = "1.2.0"
 
-lifecycleRuntime = "2.8.7"
-activityCompose = "1.10.1"
+lifecycleRuntime = "2.10.0"
+activityCompose = "1.12.3"
 
-composeBom = "2025.04.01"
-navigationCompose = "2.8.9"
+composeBom = "2026.01.01"
+adaptiveMaterial3 = "1.3.0-alpha07"
+navigation3 = "1.0.0"
 coil = "2.7.0"
+lottie = "6.7.1"
+composeStabilityAnalyzer = "0.6.6"
 
-retrofit = "2.11.0"
-okhttp3 = "4.12.0"
+ktor = "3.4.0"
+ktorfit = "2.7.2"
 
-room = "2.7.1"
-dataStore = "1.1.2"
+securityCrypto = "1.1.0"
 
-accompanist = "0.37.0"
+room = "2.8.4"
+dataStore = "1.2.0"
 
-gmsPlugin = "4.4.2"
-firebaseBom = "33.8.0"
-firebaseCrashlytics = "3.0.3"
+gmsPlugin = "4.4.4"
+firebaseBom = "34.9.0"
+firebaseCrashlytics = "3.0.6"
+ossLicensesPlugin = "0.10.10"
+playOssLicenses = "17.4.0"
 
 timber = "5.0.1"
 
 junit = "4.13.2"
-junitExt = "1.2.1"
-testCoreKtx = "1.6.1"
-espressoCore = "3.6.1"
-mockk = "1.13.16"
-robolectric = "4.14.1"
+junitExt = "1.3.0"
+testCoreKtx = "1.7.0"
+espressoCore = "3.7.0"
+mockk = "1.14.9"
+robolectric = "4.16.1"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core" }
@@ -60,7 +65,33 @@ lint-api = { module = "com.android.tools.lint:lint-api", version.ref = "lint" }
 lint-checks = { module = "com.android.tools.lint:lint-checks", version.ref = "lint" }
 lint-tests = { module = "com.android.tools.lint:lint-tests", version.ref = "lint" }
 
-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+dagger-hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
+dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
+
+androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+
+ktorfit-lib = { module = "de.jensklingenberg.ktorfit:ktorfit-lib", version.ref = "ktorfit" }
+ktorfit-converters-flow = { module = "de.jensklingenberg.ktorfit:ktorfit-converters-flow", version.ref = "ktorfit" }
+
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
+
+androidx-datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "dataStore" }
+
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "splashscreen" }
 
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleRuntime" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
@@ -76,10 +107,26 @@ androidx-ui-text-google-fonts = { module = "androidx.compose.ui:ui-text-google-f
 androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 
-androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
-androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "navigationCompose" }
+androidx-adaptive = { module = "androidx.compose.material3.adaptive:adaptive", version.ref = "adaptiveMaterial3" }
+androidx-adaptive-layout = { module = "androidx.compose.material3.adaptive:adaptive-layout", version.ref = "adaptiveMaterial3" }
+androidx-adaptive-navigation3 = { module = "androidx.compose.material3.adaptive:adaptive-navigation3", version.ref = "adaptiveMaterial3" }
+
+androidx-lifecycle-viewmodel-navigation3 = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "lifecycleRuntime" }
+androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
 
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+coil-gif = { module = "io.coil-kt:coil-gif", version.ref = "coil" }
+
+lottie = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie" }
+
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+firebase-config = { module = "com.google.firebase:firebase-config" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging" }
+
+play-services-oss-licenses = { module = "com.google.android.gms:play-services-oss-licenses", version.ref = "playOssLicenses" }
 
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
@@ -102,21 +149,25 @@ kotlin = [
 kotlin-test = ["kotlinx-coroutines-test", "turbine"]
 
 compose = [
-    "androidx-navigation-compose",
+    "androidx-hilt-navigation-compose",
     "androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview",
     "androidx-material3", "androidx-material3-windowSizeClass",
+    "androidx-adaptive", "androidx-adaptive-layout", "androidx-adaptive-navigation3",
     "androidx-ui-text-google-fonts",
-    "coil",
+    "coil", "coil-gif", "lottie",
+    "androidx-navigation3-runtime", "androidx-navigation3-ui", "androidx-lifecycle-viewmodel-navigation3"
 ]
-compose-android-test = ["androidx-ui-test-junit4", "androidx-navigation-testing"]
+compose-android-test = ["androidx-ui-test-junit4"]
 compose-ui-test = ["androidx-ui-tooling", "androidx-ui-test-manifest"]
+ktor = ["ktor-client-core", "ktor-client-cio", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json", "ktor-client-logging"]
+ktorfit = ["ktorfit-lib", "ktorfit-converters-flow"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-jetbrains-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains-kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+jetbrains-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 androidx-room = { id = "androidx.room", version.ref = "room" }
@@ -124,3 +175,6 @@ secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugi
 gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlytics" }
 android-lint = { id = "com.android.lint" }
+ktorfit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
+stability-analyzer = { id = "com.github.skydoves.compose.stability.analyzer", version.ref = "composeStabilityAnalyzer" }
+gms-oss-licenses-plugin = { id = "com.google.android.gms.oss-licenses-plugin", version.ref = "ossLicensesPlugin" }

@@ -18,7 +18,7 @@ jobs:
 
       - name: Checkout code
         if: github.event.pull_request.merged == true
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Create tag by branch name
         if: github.event.pull_request.merged == true
