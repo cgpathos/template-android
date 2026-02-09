@@ -76,6 +76,14 @@ secrets {
     defaultPropertiesFileName = "secrets.defaults.properties"
 }
 
+ktorfit {
+    compilerPluginVersion.set("2.3.3")
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
 dependencies {
     // kotlin
     implementation(libs.bundles.kotlin)
